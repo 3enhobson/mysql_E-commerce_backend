@@ -14,7 +14,14 @@ ProductTag.init(
       autoIncrement: true
     },
    //Not sure which ID to use for the column
-   
+   product_id: {
+    type: DataTypes.INTEGER,
+    //not sure how to refrence Product models id
+   },
+   tag_id: {
+    type: DataTypes.INTEGER,
+    //not sure how to refrence Tag models id
+   }
   },
   {
     sequelize,
