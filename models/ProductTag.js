@@ -14,6 +14,7 @@ ProductTag.init(
       autoIncrement: true
     },
    //Not sure which ID to use for the column
+   
   },
   {
     sequelize,
