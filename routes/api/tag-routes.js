@@ -48,7 +48,11 @@ router.post('/', (req, res) => {
 
 router.put('/:id', (req, res) => {
   // update a tag's name by its `id` value
-  Tag.update(req.body)
+  Tag.update(req.body, {
+    where: {
+      id: req.params.id
+    }
+  })
   .then((tag) => {
     res.status(200).json(tag)
   })
@@ -57,10 +61,10 @@ router.put('/:id', (req, res) => {
   })
 });
 
-router.delete('/:id', (req, res) => {
+router.delete('/:id', async (req, res) => {
   // delete on tag by its `id` value
 try {
-  const soloTagData = Tag.destroy({
+  const soloTagData = await Tag.destroy({
   where: {
     id: req.params.id
   }
